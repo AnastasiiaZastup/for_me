@@ -1,12 +1,15 @@
 import React from 'react';
-import { Categories } from './Categories';
-import ExerciseList from './ExerciseList';
+import ExercisesSubcategoriesList from './ExercisesSubcategoriesList';
+import ExercisesCategories from './ExercisesCategories';
 
-export const App = () => {
+function App() {
   return (
-    <div>
-      <Categories />
-      <ExerciseList />
+    <div className="App">
+      <ExercisesCategories />
+      <h1>Exercise Subcategories</h1>
+      <ExercisesSubcategoriesList />
     </div>
   );
-};
+}
+
+export default App;

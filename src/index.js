@@ -1,12 +1,10 @@
-// index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'; // Додайте BrowserRouter
-import { App } from './components/App';
+import App from './components/App'; // Зверніть увагу на зміну тут
 
 ReactDOM.render(
-  <BrowserRouter>
+  <React.StrictMode>
     <App />
-  </BrowserRouter>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
