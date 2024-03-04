@@ -1,16 +1,12 @@
+import React from 'react';
+import { Categories } from './Categories';
+import ExerciseList from './ExerciseList';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Categories />
+      <ExerciseList />
     </div>
   );
 };
