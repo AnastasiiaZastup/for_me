@@ -1,19 +1,23 @@
 import React from 'react';
+import {
+  CategoryLists,
+  CategoryExercisesStyle,
+} from './ExercisesCategories.styled';
 
 const ExercisesCategories = () => {
   return (
     <div>
-      <ul>
+      <CategoryLists>
         <li>
-          <p>Body parts</p>
+          <CategoryExercisesStyle>Body parts</CategoryExercisesStyle>
         </li>
         <li>
-          <p>Muscles</p>
+          <CategoryExercisesStyle>Muscles</CategoryExercisesStyle>
         </li>
         <li>
-          <p>Equipment</p>
+          <CategoryExercisesStyle>Equipment</CategoryExercisesStyle>
         </li>
-      </ul>
+      </CategoryLists>
     </div>
   );
 };
