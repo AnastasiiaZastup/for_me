@@ -1,12 +1,13 @@
 import React from 'react';
-import ExercisesSubcategoriesList from './ExercisesSubcategoriesList';
-import ExercisesCategories from './ExercisesCategories';
+import ExercisesSubcategoriesList from './ExercisesSubcategoriesList/ExercisesSubcategoriesList';
+import ExercisesCategories from './ExercisesCategories/ExercisesCategories';
 
 function App() {
   return (
     <div className="App">
+      <h1>Exercise </h1>
       <ExercisesCategories />
-      <h1>Exercise Subcategories</h1>
+
       <ExercisesSubcategoriesList />
     </div>
   );

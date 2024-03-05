@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ExercisesSubcategoriesItem from './ExercisesSubcategoriesItem';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { slider } from '../slider';
+import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 
 const ExercisesSubcategoriesList = () => {
   const [exercises, setExercises] = useState([]);
@@ -9,7 +13,7 @@ const ExercisesSubcategoriesList = () => {
     const fetchExercises = async () => {
       try {
         const token =
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTQ1MzkzYmZjNWExMzNmOTExMDZiZCIsImlhdCI6MTcwOTU2MDM3OSwiZXhwIjoxNzA5NjQzMTc5fQ.eD-4y2r6SVQKgD5mv1DdDN148O2s5QPb8l15x3mI0ks';
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTQ1MzkzYmZjNWExMzNmOTExMDZiZCIsImlhdCI6MTcwOTYyODMwOSwiZXhwIjoxNzA5NzExMTA5fQ.EuGaXjrDFsutOL4ZXiYBEIyB8zUoU3JvwSisHFXBiYc';
         const config = {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -20,7 +24,14 @@ const ExercisesSubcategoriesList = () => {
           'https://project-qwerty2024-back.onrender.com/api/exercises',
           config
         );
-        setExercises(response.data.bodyPart);
+
+        const allExercises = [
+          ...response.data.bodyPart,
+          ...response.data.equipment,
+          ...response.data.target,
+        ];
+
+        setExercises(allExercises);
       } catch (error) {
         console.error('Error fetching exercises:', error);
       }
@@ -30,11 +41,11 @@ const ExercisesSubcategoriesList = () => {
   }, []);
 
   return (
-    <div>
+    <Slider {...slider}>
       {exercises.map(exercise => (
         <ExercisesSubcategoriesItem key={exercise._id} subcategory={exercise} />
       ))}
-    </div>
+    </Slider>
   );
 };
 
