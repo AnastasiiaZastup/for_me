@@ -13,7 +13,7 @@ const ExercisesSubcategoriesList = () => {
     const fetchExercises = async () => {
       try {
         const token =
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTQ1MzkzYmZjNWExMzNmOTExMDZiZCIsImlhdCI6MTcwOTYyODMwOSwiZXhwIjoxNzA5NzExMTA5fQ.EuGaXjrDFsutOL4ZXiYBEIyB8zUoU3JvwSisHFXBiYc';
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTdmNWMxMzVkMDMzNGExMWJmZDUwZiIsImlhdCI6MTcwOTc0NTkzOSwiZXhwIjoxNzA5ODI4NzM5fQ.sZyVWKJZRsXGu1GpoBKqmeruBZ0Mc22ezRmPAhEL55Y';
         const config = {
           headers: {
             Authorization: `Bearer ${token}`,
